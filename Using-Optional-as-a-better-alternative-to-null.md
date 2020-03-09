@@ -132,17 +132,17 @@ Optional 클래스의 stream() 메서드
 # 4️⃣ Optional을 사용한 실용 예제
 
 ## 1. 잠재적으로 null이 될 수 있는 대상을 Optional로 감싸기
+기존 null을 반환하는 코드를 Optional로 감싼다.
 
-기존 null을 반환하는 코드를 Optional로 감싼다
+- 기존 ``Object value = map.get("key");``
 
-- 기존 *Object value = map.get("key");*
-
-- 수정 *Optional<Object> value = Optional.ofNullable(map.get("key"));*
+- 수정 ``Optional<Object> value = Optional.ofNullable(map.get("key"));``
+    
 
 ## 2. 예외와 Optional 클래스
-
 parseInt와 같이 null대신 예외를 발생시키는 함수는 OptionalUtility를 만든다. 그안에 메소드를 try-catch로 구현하여 optional을 반환하도록 한다. 
 
 ## 3. 기본형 Optional을 사용하지 말하야 하는 이유
-
 Optional스트림의 최대 요소 수는 1개이므로 기본형 특화 클래스로 성능을 개선 할 수 없다. 또한 클래스의 map, flatMap, filter등을 지원하지 않는다. 
+
+
